@@ -5,24 +5,9 @@ from bisect import bisect_left, bisect_right, bisect, insort_left, insort_right,
 from itertools import accumulate, product, permutations, combinations
 
 def main():
-    X = int(input())
+    N = int(input())
 
-    if X <= 599:
-        print('8')
-    elif X <= 799:
-        print('7')
-    elif X <= 999:
-        print('6')
-    elif X <= 1199:
-        print('5')
-    elif X <= 1399:
-        print('4')
-    elif X <= 1599:
-        print('3')
-    elif X <= 1799:
-        print('2')
-    else:
-        print('1')
+    print(N // 2 + 1) if N % 2 else print(N // 2)
 
 if __name__ == '__main__':
     main()

@@ -5,14 +5,9 @@ from bisect import bisect_left, bisect_right, bisect, insort_left, insort_right,
 from itertools import accumulate, product, permutations, combinations
 
 def main():
-    N, K = map(int, input().split())
-    A = list(map(int, input().split()))
+    N = int(input())
 
-    for i in range(N-K):
-        if A[i] < A[i+K]:
-            print('Yes')
-        else:
-            print('No')
+    print('YES') if '3' in str(N) or N%3==0 else print('NO')
 
 if __name__ == '__main__':
     main()

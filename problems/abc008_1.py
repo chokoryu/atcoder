@@ -5,7 +5,9 @@ from bisect import bisect_left, bisect_right, bisect, insort_left, insort_right,
 from itertools import accumulate, product, permutations, combinations
 
 def main():
-     = 
+    S, T = map(int, input().split())
+
+    print(T - S + 1)
 
 if __name__ == '__main__':
     main()
