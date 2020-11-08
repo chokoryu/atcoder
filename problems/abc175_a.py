@@ -6,17 +6,17 @@ from itertools import accumulate, product, permutations, combinations
 
 def main():
     S = input()
-    T = input()
 
-    res = 1000
+    res = 0
+    tmp = 0
 
-    for i in range(len(S)-len(T)+1):
-        tmp = 0
-        for j in range(len(T)):
-            if S[i+j] != T[j]:
-                tmp += 1
-        if tmp < res:
-            res = tmp
+    for weather in S:
+        if weather == 'R':
+            tmp += 1
+            if tmp > res:
+                res = tmp
+        else:
+            tmp = 0
 
     print(res)
 
