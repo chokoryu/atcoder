@@ -8,21 +8,26 @@ def main():
      N = int(input())
      A = list(map(int, input().split()))
 
-     total_sum = [A[0]]
+     total_sum = [i for i in accumulate(A)]
+     total_sum = [i for i in accumulate(total_sum)]
      max_coordinate = []
 
-     for i in range(1, N):
-          total_sum.append(total_sum[i-1]+A[i])
-
      prev_point = 0
+     max_point = 0
 
      for i in range(0,N):
-          max_point = max(prev_point, prev_point+A[i])
+          max_point = max(max_point, prev_point+A[i])
           max_coordinate.append(max_point)
           prev_point += A[i]
 
-     print(max_coordinate)
+     res = max(total_sum[0], max_coordinate[0])
 
+     for i in range(1, N):
+          tmp = total_sum[i-1] + max_coordinate[i]
+          if tmp > res:
+               res = tmp
+
+     print(res)
 
 if __name__ == '__main__':
      main()
