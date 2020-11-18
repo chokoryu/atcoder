@@ -7,7 +7,8 @@ from itertools import accumulate, product, permutations, combinations
 def main():
     Sx, Sy, Gx, Gy = map(int, input().split())
 
-
+    x = (Gy * Sx + Sy * Gx) / (Gy + Sy)
+    print(x)
 
 if __name__ == '__main__':
     main()

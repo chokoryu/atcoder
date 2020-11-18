@@ -5,21 +5,10 @@ from bisect import bisect_left, bisect_right, bisect, insort_left, insort_right,
 from itertools import accumulate, product, permutations, combinations
 
 def main():
-    N, K = map(int, input().split())
+    N = int(input())
+    S = input()
 
-    res = 0
-
-    for i in range(1, N+1):
-        tmp = 1 / N
-        now = i
-
-        while(now<K):
-            now *= 2
-            tmp /= 2
-
-        res += tmp
-
-    print(res)
+    print('Yes') if S[:N//2] == S[N//2:] else print('No')
 
 if __name__ == '__main__':
     main()
